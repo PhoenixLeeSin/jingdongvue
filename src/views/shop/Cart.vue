@@ -84,46 +84,25 @@
         <span class="check__info__price">&yen;{{ calculations.price }}</span>
       </div>
       <div class="check__btn">
-        <router-link :to="{}">去结算</router-link>
+        <router-link :to="{ path: `/orderConfirmation/${shopId}` }">
+          去结算
+        </router-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
-import { useCommonCartEffect } from './commonCartEffect'
+import { useCommonCartEffect } from '../../effects/cartEffects.js'
 
 /// 获取购物车信息逻辑
 const useCartEffect = (shopId) => {
   const store = useStore()
-  const { cartList, changeCartItemInfo } = useCommonCartEffect()
-
-  const calculations = computed(() => {
-    const productList = cartList[shopId]?.productList
-    const result = { total: 0, price: 0, allChecked: true }
-    if (productList) {
-      for (const i in productList) {
-        const product = productList[i]
-        result.total += product.count
-        if (product.check) {
-          result.price += product.count * product.price
-        }
-        if (product.count > 0 && !product.check) {
-          result.allChecked = false
-        }
-      }
-    }
-    result.price = result.price.toFixed(2)
-    return result
-  })
-
-  const productList = computed(() => {
-    const productList = cartList[shopId]?.productList || []
-    return productList
-  })
+  const { productList, changeCartItemInfo, calculations } =
+    useCommonCartEffect(shopId)
 
   const changeCartItemChecked = (shopId, productId) => {
     store.commit('changeCartItemChecked', { shopId, productId })
@@ -172,6 +151,7 @@ export default {
     const { showCart, handleCartShowChange } = toggleCartEffect()
 
     return {
+      shopId,
       calculations,
       productList,
       clearCartProducts,
@@ -328,7 +308,7 @@ export default {
       min-width: 0.2rem;
       height: 0.2rem;
       line-height: 0.2rem;
-      background-color: $content-bgColor;
+      background-color: $hightlight-fontColor;
       border-radius: 0.1rem;
       font-size: 0.12rem;
       text-align: center;
@@ -343,7 +323,7 @@ export default {
     font-size: 0.12rem;
     &__price {
       line-height: 0.49rem;
-      color: $content-bgColor;
+      color: $hightlight-fontColor;
       font-size: 0.18rem;
     }
   }
