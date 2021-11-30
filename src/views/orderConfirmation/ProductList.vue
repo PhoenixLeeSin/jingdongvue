@@ -3,30 +3,32 @@
     <div class="products__title">{{ shopName }}</div>
     <div class="products__wrapper">
       <div class="products__list">
-        <template v-for="item in productList" :key="item._id">
-          <div v-if="item.count > 0" class="products__list__item">
-            <img :src="item.imgUrl" class="products__list__item__image" />
-            <div class="products__list__item__info">
-              <div class="products__list__item__info__title">
-                {{ item.name }}
+        <div
+          v-for="item in productList"
+          :key="item._id"
+          class="products__list__item"
+        >
+          <img :src="item.imgUrl" class="products__list__item__image" />
+          <div class="products__list__item__info">
+            <div class="products__list__item__info__title">
+              {{ item.name }}
+            </div>
+            <div class="products__list__item__info__price">
+              <div class="products__list__item__info__price__unit">
+                <span class="products__list__item__info__price__unit__red">
+                  &yen;
+                </span>
+                {{ item.price }} x {{ item.count }}
               </div>
-              <div class="products__list__item__info__price">
-                <div class="products__list__item__info__price__unit">
-                  <span class="products__list__item__info__price__unit__red">
-                    &yen;
-                  </span>
-                  {{ item.price }} x {{ item.count }}
-                </div>
-                <div class="products__list__item__info__price__total">
-                  <span class="products__list__item__info__price__total__black">
-                    &yen;
-                  </span>
-                  {{ (item.price * item.count).toFixed(2) }}
-                </div>
+              <div class="products__list__item__info__price__total">
+                <span class="products__list__item__info__price__total__black">
+                  &yen;
+                </span>
+                {{ (item.price * item.count).toFixed(2) }}
               </div>
             </div>
           </div>
-        </template>
+        </div>
       </div>
     </div>
   </div>
