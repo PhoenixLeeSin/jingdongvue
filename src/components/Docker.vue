@@ -3,10 +3,15 @@
     <span
       v-for="(item, index) in dockerList"
       :key="item.icon"
-      :class="{ docker__item: true, 'docker__item--active': index === 0 }"
+      :class="{
+        docker__item: true,
+        'docker__item--active': index === parseInt(currentIndex, 10),
+      }"
     >
-      <div class="iconfont" v-html="item.icon"></div>
-      <div class="docker__title">{{ item.text }}</div>
+      <router-link :to="item.to">
+        <div class="iconfont" v-html="item.icon"></div>
+        <div class="docker__title">{{ item.text }}</div>
+      </router-link>
     </span>
   </div>
 </template>
@@ -14,12 +19,13 @@
 <script>
 export default {
   name: 'Docker',
+  props: ['currentIndex'],
   setup() {
     const dockerList = [
-      { icon: '&#xe64f;', text: '首页' },
-      { icon: '&#xe63f;', text: '购物车' },
-      { icon: '&#xe787;', text: '订单' },
-      { icon: '&#xe8a0;', text: '我的' },
+      { icon: '&#xe64f;', text: '首页', to: { name: 'Home' } },
+      { icon: '&#xe63f;', text: '购物车', to: { name: 'CartList' } },
+      { icon: '&#xe787;', text: '订单', to: { name: 'OrderList' } },
+      { icon: '&#xe8a0;', text: '我的', to: { name: 'Home' } },
     ]
     return { dockerList }
   },
@@ -27,7 +33,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../../style/variables.scss';
+@import '../style/variables.scss';
 .docker {
   display: flex;
   box-sizing: border-box;
@@ -42,6 +48,10 @@ export default {
   &__item {
     flex: 1;
     text-align: center;
+    a {
+      text-decoration: none;
+      color: $content-fontColor;
+    }
     .iconfont {
       margin: 0.07rem 0 0.02rem 0;
       font-size: 0.18rem;
@@ -50,9 +60,12 @@ export default {
       font-size: 0.2rem;
       transform: scale(0.5, 0.5);
       transform-origin: center top;
+      // color: $content-fontColor;
     }
     &--active {
-      color: #1fa4fc;
+      a {
+        color: #1fa4fc;
+      }
     }
   }
 }

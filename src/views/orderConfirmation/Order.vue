@@ -62,7 +62,7 @@ const useSubmitEffect = (shopId, shopName, productList) => {
         console.log(result)
         show.value = false
         store.commit('clearCartData', { shopId })
-        router.push({ name: 'Home' })
+        router.push({ name: 'OrderList' })
       }
     } catch (e) {}
   }
