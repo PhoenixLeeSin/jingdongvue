@@ -37,25 +37,25 @@
         </div>
         <div class="content__product__item__number">
           <span
-            class="content__product__item__number__minus"
+            class="content__product__item__number__minus iconfont"
             @click="
               () => {
                 changeCartItem(shopId, item._id, item, -1, shopName)
               }
             "
           >
-            -
+            &#xe66d;
           </span>
           {{ getProductCartCount(shopId, item._id) }}
           <span
-            class="content__product__item__number__plus"
+            class="iconfont content__product__item__number__plus"
             @click="
               () => {
                 changeCartItem(shopId, item._id, item, 1, shopName)
               }
             "
           >
-            +
+            &#xe781;
           </span>
         </div>
       </div>
@@ -203,7 +203,6 @@ export default {
           line-height: 0.2rem;
           font-size: 0.14rem;
           color: $content-fontColor;
-
           @include ellipsis;
         }
         &__sales {
@@ -237,26 +236,16 @@ export default {
         position: absolute;
         bottom: 0.12rem;
         right: 0;
-        &__minus,
-        &__plus {
-          width: 0.2rem;
-          height: 0.2rem;
-          display: inline-block;
-          border-radius: 50%;
-          font-size: 0.2rem;
-          text-align: center;
-          line-height: 0.16rem;
-        }
+        font-size: 0.14rem;
         &__minus {
-          border: 1px solid $medium-fontColor;
+          font-size: 0.18rem;
           color: $medium-fontColor;
           margin-right: 0.1rem;
         }
         &__plus {
-          background: $btn-bgColor;
-          color: $bgColor;
-          border-color: $btn-bgColor;
+          color: $btn-bgColor;
           margin-left: 0.1rem;
+          font-size: 0.18rem;
         }
       }
     }

@@ -73,11 +73,11 @@ export default {
   &__list {
     &__item {
       box-sizing: border-box;
-      padding: 0.16rem 0.16rem 0 0.16rem;
+      padding: 0.16rem 0.16rem 0.1rem 0.16rem;
       display: flex;
       position: relative;
-      line-height: 0.62rem;
-      height: 0.62rem;
+      line-height: 0.72rem;
+      height: 0.72rem;
       background-color: $bgColor;
       &__image {
         width: 0.46rem;

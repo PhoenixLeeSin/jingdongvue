@@ -45,7 +45,7 @@ export default {
   background-image: linear-gradient(0deg, rgba(0, 145, 255, 0) 4%, #0091ff 50%);
   background-repeat: no-repeat;
   &__header {
-    padding-top: 0.41rem;
+    padding-top: 0.11rem;
     display: flex;
     &__back {
       display: inline-block;
