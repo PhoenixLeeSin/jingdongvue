@@ -103,7 +103,7 @@ export default {
   right: 0;
   bottom: 0;
   height: 0.49rem;
-  border-top: 1px solid #e1e1e1;
+  border-top: 0.01rem solid #e1e1e1;
   display: flex;
   background-color: $bgColor;
   &__price {
@@ -142,7 +142,7 @@ export default {
     margin: auto 0.37rem auto 0.37rem;
     padding: 0.24rem 0;
     background: #ffffff;
-    border-radius: 4px;
+    border-radius: 0.04rem;
     z-index: 2;
     &__title {
       font-size: 0.18rem;
@@ -163,7 +163,7 @@ export default {
       padding: 0 0.59rem;
       &__left {
         display: inline-block;
-        border: 1px solid #4fb0f9;
+        border: 0.01rem solid #4fb0f9;
         border-radius: 0.16rem;
         width: 0.8rem;
         line-height: 0.32rem;
@@ -175,7 +175,7 @@ export default {
       &__right {
         display: inline-block;
         background: #4fb0f9;
-        border: 1px solid #4fb0f9;
+        border: 0.01rem solid #4fb0f9;
         border-radius: 0.16rem;
         font-size: 0.14rem;
         color: #ffffff;

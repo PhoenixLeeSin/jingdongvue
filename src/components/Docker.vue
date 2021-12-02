@@ -43,7 +43,7 @@ export default {
   bottom: 0;
   width: 100%;
   height: 0.49rem;
-  border-top: 1px solid $content-bgColor;
+  border-top: 0.01rem solid $content-bgColor;
   color: $content-fontColor;
   &__item {
     flex: 1;

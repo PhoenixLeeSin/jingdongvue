@@ -189,7 +189,7 @@ export default {
   &__header {
     display: flex;
     line-height: 0.52rem;
-    border-bottom: 1px solid $content-bgColor;
+    border-bottom: 0.01rem solid $content-bgColor;
     font-size: 0.14rem;
     color: $content-fontColor;
     &__all {
@@ -217,7 +217,7 @@ export default {
     display: flex;
     padding: 0.12rem 0;
     margin: 0 0.16rem;
-    border-bottom: 1px solid $content-bgColor;
+    border-bottom: 0.01rem solid $content-bgColor;
     &__checked {
       line-height: 0.5rem;
       margin-right: 0.2rem;
@@ -275,7 +275,7 @@ export default {
 .check {
   display: flex;
   height: 0.49rem;
-  border-top: 1px solid $content-bgColor;
+  border-top: 0.01rem solid $content-bgColor;
   line-height: 0.49rem;
   &__icon {
     position: relative;

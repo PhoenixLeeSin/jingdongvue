@@ -98,7 +98,7 @@ export default {
     margin: 0.16rem 0.18rem 0 0.18rem;
     padding: 0.16rem;
     background: $bgColor;
-    border-radius: 4px;
+    border-radius: 0.04rem;
     &__top {
       line-height: 0.22rem;
       display: flex;

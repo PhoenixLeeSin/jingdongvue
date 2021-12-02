@@ -70,7 +70,7 @@ export default {
     height: 1.11rem;
     padding: 0.16rem 0.16rem 0 0.16rem;
     background-color: $bgColor;
-    border-radius: 4px;
+    border-radius: 0.04rem;
     margin: 0.22rem 0.18rem 0 0.18rem;
     &__title {
       font-size: 0.16rem;

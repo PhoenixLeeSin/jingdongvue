@@ -55,8 +55,8 @@ export default {
   margin: 0.16rem 0.18rem 0 0.18rem;
   padding: 0.16rem 0.16rem 0 0.16rem;
   background-color: $bgColor;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-top-left-radius: 0.04rem;
+  border-top-right-radius: 0.04rem;
   &__title {
     line-height: 0.22rem;
     font-size: 0.16rem;

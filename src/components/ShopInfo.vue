@@ -44,7 +44,7 @@ export default {
     flex: 1;
     margin-left: 0.16rem;
     &--bordered {
-      border-bottom: 1px solid $content-bgColor;
+      border-bottom: 0.01rem solid $content-bgColor;
     }
     &__title {
       font-size: 0.16rem;

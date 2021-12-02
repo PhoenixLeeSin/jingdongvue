@@ -190,7 +190,7 @@ export default {
       display: flex;
       padding: 0.12rem 0;
       margin: 0 0.16rem;
-      border-bottom: 1px solid $search-bgColor;
+      border-bottom: 0.01rem solid $search-bgColor;
       &__image {
         width: 0.68rem;
         height: 0.68rem;
